@@ -33,45 +33,45 @@ RSpec.describe Facility do
   end
 
 
-  describe "#register_vehicle" do 
-    xit 'has a Vehicle Registration service' do 
-     expect(@cruz).to be_an_instance_of(Vehicle)
-     
-     @facility_1.add_service('Vehicle Registration')
-     
-     expect(@facility_1.registered_vehicles).to eq([])
-     expect(@facility_1.collected_fees).to eq(0) 
+  describe "#register_vehicle" do
+    it 'has a Vehicle Registration service' do
+      expect(@cruz).to be_an_instance_of(Vehicle)
 
-     @facility_1.register_vehicle(@cruz)
+      @facility_1.add_service('Vehicle Registration')
 
-    # expect(@cruz.registration_date).to eq(Date.today)
-     expect(@facility_1.registered_vehicles).to eq([@cruz]) 
-    # expect(@cruz.plate_type).to eq(:regular)
-    
-     expect(@facility_1.collected_fees).to eq(100)
+      expect(@facility_1.registered_vehicles).to eq([])
+      expect(@facility_1.collected_fees).to eq(0)
 
-      @facility_1.register_vehicle(@camaro)
+      @facility_1.register_vehicle(@cruz)
 
-     expect(@camaro.registration_date).to eq(Date.today)
-     expect(@camaro.plate_type).to eq(:antique)
+      # expect(@cruz.registration_date).to eq(Date.today)
+      expect(@facility_1.registered_vehicles).to eq([@cruz])
+      # expect(@cruz.plate_type).to eq(:regular)
 
-     @facility_1.register_vehicle(@bolt)
+      expect(@facility_1.collected_fees).to eq(100)
 
-     expect(@bolt.registration_date).to eq(Date.today) 
-     expect(@bolt.plate_type).to eq(:ev)
-     expect(@facility_1.registered_vehicles).to eq([@cruz, @camaro, @bolt])
-     expect(@facility_1.collected_fees).to eq(325)
+        @facility_1.register_vehicle(@camaro)
+
+      expect(@camaro.registration_date).to eq(Date.today)
+      expect(@camaro.plate_type).to eq(:antique)
+
+      @facility_1.register_vehicle(@bolt)
+
+      expect(@bolt.registration_date).to eq(Date.today)
+      expect(@bolt.plate_type).to eq(:ev)
+      expect(@facility_1.registered_vehicles).to eq([@cruz, @camaro, @bolt])
+      expect(@facility_1.collected_fees).to eq(325)
     end
   end
 
-  describe "#earn_permit" do 
-    it 'administers learners permits' do 
-      expect(@registrant_1).to be_an_instance_of(Registrant) 
+  describe "#earn_permit" do
+    it 'administers learners permits' do
+      expect(@registrant_1).to be_an_instance_of(Registrant)
       expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
       expect(@registrant_1.permit?).to eq(true)
       expect(@facility_1.administer_written_test(@registrant_1)).to eq(false)
       expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
-    
+
       @facility_1.add_service('Written Test')
 
       expect(@facility_1.administer_written_test(@registrant_1)).to eq(true)
@@ -95,8 +95,8 @@ RSpec.describe Facility do
     end
   end
 
-  describe "#administer_road_test" do 
-    xit 'administers road tests' do 
+  describe "#administer_road_test" do
+    xit 'administers road tests' do
       expect().to be_an_instance_of()
       expect().to eq()
       expect().to eq()
@@ -121,7 +121,7 @@ RSpec.describe Facility do
   end
 
 
-end 
+end
 
 
 
@@ -147,7 +147,7 @@ end
 # 0
 
 
-# ------------------------------- 
+# -------------------------------
 
 
 # Road Test
